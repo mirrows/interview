@@ -1,0 +1,9 @@
+.my-drawer .ant-drawer-content-wrapper{
+  width: 100%;
+}
+
+@media (width >= 40rem) {
+  .my-drawer .ant-drawer-content-wrapper {
+    max-width: var(--container-sm);
+  }
+}
