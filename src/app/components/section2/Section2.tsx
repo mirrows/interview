@@ -1,6 +1,7 @@
 import GetStartBtn from "@/components/getStartBtn/getStartBtn"
 import PlayVideo from "@/components/playVideo/playVideo"
 import RateStar from "@/components/rateStar/rateStar";
+import TotalData from "@/components/totalData/totalData";
 
 export default function Section2() {
   const staticData = [
@@ -90,14 +91,8 @@ export default function Section2() {
                 </div>
                 <p className="text-caption text-dark-grey mb-0 text-center">Renee D.</p>
               </div>
-              <div className="md:grid-cols-3 grid grid-cols-1 items-start gap-8 text-center">
-                {footerStaticData.map((data, i) => (
-                  <div key={i} className="flex flex-col items-center text-h2">
-                    {data.img}
-                    <span className="mb-2 font-bold">{data.line1}</span>
-                    <p className="text-p1 text-dark-grey">{data.line2}</p>
-                  </div>
-                ))}
+              <div className="md:grid-cols-3 grid grid-cols-1 items-start gap-8 text-center text-h2">
+                <TotalData data={footerStaticData} />
               </div>
             </div>
           </div>

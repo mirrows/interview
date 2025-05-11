@@ -29,6 +29,18 @@
 }
 
 @layer utilities {
+  .text-legal {
+    font-size: .75rem;
+    line-height: 1.125rem;
+}
+  .text-h35 {
+    font-size: 1.375rem;
+    line-height: 1.875rem;
+  }
+  .text-h6 {
+    font-size: .875rem;
+    line-height: 1.25rem;
+  }
   .text-h15 {
     font-size: var(--text-h15);
     line-height: var(--tw-leading, var(--text-h15--line-height));
@@ -70,10 +82,11 @@
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
-  .ant-tooltip .ant-tooltip-inner{
-    background-color: white !important;
-    color: black !important;
-    padding: 1rem !important;
+  .triangle-top {
+    clip-path: polygon(0 100%, 50% 0, 100% 100%);
+  }
+  .triangle-bottom {
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
   }
   @media (min-width: 1024px) { /* 对应 md 断点，默认值是 768px */
     .lg\:text-h0 {
@@ -101,6 +114,12 @@
     .md\:text-p0 {
       font-size: var(--text-p0);
       line-height: var(--tw-leading, var(--text-p0--line-height));
+    }
+    .md\:triangle-left {
+      clip-path: polygon(0 0, 100% 0, 100% 100%);
+    }
+    .md\:gap-x-2 {
+      column-gap: .5rem;
     }
   }
 }
@@ -139,6 +158,10 @@ body {
   font-family: CeraPRO,sans-serif;
 }
 
+[role=button], button {
+  cursor: pointer;
+}
+
 .font-custom {
   font-family: CeraPRO,sans-serif;
 }
@@ -167,9 +190,17 @@ body {
 .font-tisa-pro {
   font-family: var(--font-tisa-pro);
 }
+.font-cera-pro {
+  font-family: CeraPro;
+}
 .animate-expand-height
  {
-    animation: .7s linear expand-height;
+  animation: .7s linear expand-height;
+}
+.bg-facebook {
+  --tw-bg-opacity: 1;
+  background-color: #3a579d;
+  background-color: rgba(58, 87, 157, var(--tw-bg-opacity));
 }
 @keyframes expand-height {
   0% {

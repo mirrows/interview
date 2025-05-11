@@ -1,0 +1,12 @@
+.with-styled-ol-list ol, .with-styled-ul-list ul {
+  list-style-position: outside;
+  padding-left: 2rem;
+}
+.with-styled-ul-list ul {
+  list-style-type: disc;
+}
+#who-should-read-section ul {
+  list-style-position: outside;
+  list-style-type: disc;
+  padding-left: 1rem;
+}

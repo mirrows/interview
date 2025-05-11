@@ -18,3 +18,18 @@ export const useDebounce = (func: Function, delay = 300, immediate = false) => {
     }, delay);
   };
 };
+
+export const eventBus = {
+  events: {
+    showRegistorOrLoginModal: undefined as Function | undefined,
+  },
+  on(eventName: keyof typeof this.events, callback: Function) {
+    this.events[eventName] = callback;
+  },
+  emit(eventName: keyof typeof this.events, data: any) {
+    this.events[eventName]?.(data);
+  },
+  off(eventName: keyof typeof this.events) {
+    delete this.events[eventName];
+  }
+}

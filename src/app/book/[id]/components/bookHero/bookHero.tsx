@@ -29,6 +29,13 @@ export default function BookHero({ data }: Props) {
       target: '#who-should-read-section',
     },
   ]
+  const share = () => {
+    navigator.share({
+      title: "Blinkist",
+      text: data.title,
+      url: location.href,
+    })
+  }
   return (
     <div className="flex flex-col pt-6 l:pt-16 relative  flex w-full max-w-[80rem] mx-auto md:px-12 px-4 ">
       <div className="flex justify-between">
@@ -47,9 +54,10 @@ export default function BookHero({ data }: Props) {
             </div>
           </div>
         </div>
-        <div className="contents"><button aria-label="Share with friends" className="self-start">
-          <ShareAltOutlined className='w-6 h-6 text-gray-500 cursor-pointer' style={{ fontSize: '1.5rem' }} />
-        </button>
+        <div className="contents">
+          <button aria-label="Share with friends" className="self-start" onClick={share}>
+            <ShareAltOutlined className='w-6 h-6 text-gray-500 cursor-pointer' style={{ fontSize: '1.5rem' }} />
+          </button>
         </div>
       </div>
       <div className='flex flex-col md:flex-row md:gap-16 pb-12 md:pb-16'>

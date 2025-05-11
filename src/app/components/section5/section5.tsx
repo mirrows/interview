@@ -1,8 +1,11 @@
 
+"use client"
 import { Tooltip } from "antd";
 import Icon from '@ant-design/icons';
 import type { GetProps } from 'antd';
 import RateStar from "@/components/rateStar/rateStar";
+import { useRef } from "react";
+import './section5.css'
 
 type CustomIconComponentProps = GetProps<typeof Icon>;
 
@@ -11,6 +14,7 @@ const content = <span>The following reviews are sourced from the Apple App Store
 const Semicolon = <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-16 text-background-red"><path d="M29.3692 33.1982C32.5892 33.1982 35.2012 30.5122 35.2012 27.1982C35.2012 23.8862 32.5892 21.1982 29.3692 21.1982C23.5392 21.1982 27.4252 9.60024 35.2012 9.60024V6.80024C21.3232 6.79824 15.8852 33.1982 29.3692 33.1982ZM12.5692 33.1982C15.7872 33.1982 18.3992 30.5122 18.3992 27.1982C18.3992 23.8862 15.7872 21.1982 12.5692 21.1982C6.73717 21.1982 10.6232 9.60024 18.3992 9.60024V6.80024C4.52317 6.79824 -0.914829 33.1982 12.5692 33.1982Z" fill="currentColor"></path></svg>
 
 export default function Section5() {
+  const parentNodeRef = useRef<HTMLDivElement>(null);
   const staticData = [
     {
       role: "Leaders",
@@ -47,9 +51,9 @@ export default function Section5() {
   ]
   return (
     <div className="md:gap-12 flex max-w-[80rem] flex-col items-center gap-8 md:px-8 mx-auto px-4">
-      <h3 className="text-h2 text-midnight md:text-h0 mx-auto max-w-3xl text-center font-bold">
+      <h3 ref={parentNodeRef} className="text-h2 text-midnight md:text-h0 mx-auto max-w-3xl text-center font-bold pm-parent-node">
         Join 31+ million people growing with Blinkist
-        <Tooltip placement="bottom" title={content} arrow={false} trigger="click">
+        <Tooltip getPopupContainer={() => parentNodeRef.current || document.body} placement="bottom" title={content} arrow={false} trigger="click">
           <button type="button" className="ml-2 inline-block align-text-top outline-hidden">
             <span className="text-base">ⓘ</span>
           </button>
