@@ -28,8 +28,8 @@ export default function FeaturedTitle({ data }: Props) {
             {linkData.slice(3).map((data, i) => (
               <ul key={i} className="w-64 lg:w-full mr-8 ml-4 md:mr-12 md:ml-0 lg:mr-0 lg:pr-12 last:mr-4 last:md:mr-0 flex-shrink-0 lg:flex-shrink">
                 {data.items.map((item, j) => (
-                  <li className="mb-4 text-grey-500 font-normal text-sm hover:text-blue-500">
-                    <Link key={j} href={item.href}>{item.name}</Link>
+                  <li key={j} className="mb-4 text-grey-500 font-normal text-sm hover:text-blue-500">
+                    <Link href={item.href}>{item.name}</Link>
                   </li>
                 ))}
               </ul>

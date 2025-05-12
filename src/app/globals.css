@@ -157,6 +157,9 @@ body {
   color: var(--foreground);
   font-family: CeraPRO,sans-serif;
 }
+* {
+  scroll-behavior: smooth;
+}
 
 [role=button], button {
   cursor: pointer;
