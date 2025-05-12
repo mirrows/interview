@@ -1,0 +1,217 @@
+@layer theme, base, antd, components, utilities;
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --text-h15: 2.5rem;
+  --text-h15--line-height: 3rem;
+  --text-h4: 1.125rem;
+  --text-h4--line-height: 1.5rem;
+  --text-h3: 1.5rem;
+  --text-h3--line-height: 2rem;
+  --text-h2: 2rem;
+  --text-h2--line-height: 2.5rem;
+  --text-h1: 3rem;
+  --text-h1--line-height: 3.5rem;
+  --text-h0: 4rem;
+  --text-h0--line-height: 5rem;
+  --font-weight-medium: 600;
+  --text-p1: 1rem;
+  --text-p1--line-height: 1.5rem;
+  --text-p0: 1.25rem;
+  --text-p0--line-height: 1.75rem;
+  --font-tisa-pro: ff-tisa-web-pro, sans-serif;
+  --brand-midnight: 202 92% 15%;
+  --default-transition-duration: .15s;
+  --default-transition-timing-function: cubic-bezier(.4,0,.2,1);
+  --tw-duration: .5s;
+}
+
+@layer utilities {
+  .text-legal {
+    font-size: .75rem;
+    line-height: 1.125rem;
+}
+  .text-h35 {
+    font-size: 1.375rem;
+    line-height: 1.875rem;
+  }
+  .text-h6 {
+    font-size: .875rem;
+    line-height: 1.25rem;
+  }
+  .text-h15 {
+    font-size: var(--text-h15);
+    line-height: var(--tw-leading, var(--text-h15--line-height));
+  }
+  .text-h4 {
+    font-size: var(--text-h4);
+    line-height: var(--tw-leading, var(--text-h4--line-height));
+  }
+  .text-h3 {
+    font-size: var(--text-h3);
+    line-height: var(--tw-leading, var(--text-h3--line-height));
+  }
+  .text-h2 {
+    font-size: var(--text-h2);
+    line-height: var(--tw-leading, var(--text-h2--line-height));
+  }
+  .text-h1 {
+    font-size: var(--text-h1);
+    line-height: var(--tw-leading, var(--text-h1--line-height));
+  }
+  .text-h0 {
+    font-size: var(--text-h0);
+    line-height: var(--tw-leading, var(--text-h0--line-height));
+  }
+  .text-p1 {
+    font-size: var(--text-p1);
+    line-height: var(--tw-leading, var(--text-p1--line-height));
+  }
+  .font-medium {
+    --tw-font-weight: var(--font-weight-medium);
+    font-weight: var(--font-weight-medium);
+  }
+  .scrollbar-hidden {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .transition-\[width\] {
+    transition-property: width;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .triangle-top {
+    clip-path: polygon(0 100%, 50% 0, 100% 100%);
+  }
+  .triangle-bottom {
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+  }
+  @media (min-width: 1024px) { /* 对应 md 断点，默认值是 768px */
+    .lg\:text-h0 {
+      font-size: var(--text-h0);
+      line-height: var(--tw-leading, var(--text-h0--line-height));
+    }
+  }
+  @media (min-width: 768px) {
+    .md\:text-h15 {
+      font-size: var(--text-h15);
+      line-height: var(--tw-leading, var(--text-h15--line-height));
+    }
+    .md\:text-h2 {
+      font-size: var(--text-h2);
+      line-height: var(--tw-leading, var(--text-h2--line-height));
+    }
+    .md\:text-h1 {
+      font-size: var(--text-h1);
+      line-height: var(--tw-leading, var(--text-h1--line-height));
+    }
+    .md\:text-h0 {
+      font-size: var(--text-h0);
+      line-height: var(--tw-leading, var(--text-h0--line-height));
+    }
+    .md\:text-p0 {
+      font-size: var(--text-p0);
+      line-height: var(--tw-leading, var(--text-p0--line-height));
+    }
+    .md\:triangle-left {
+      clip-path: polygon(0 0, 100% 0, 100% 100%);
+    }
+    .md\:gap-x-2 {
+      column-gap: .5rem;
+    }
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+@font-face {
+  font-family: 'CeraPRO';
+  src: url('/fonts/323ED8_3_0.woff2') format('woff2');
+  /* src: url('/fonts/tisa-pro-400.woff2') format('woff2'); */
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'CeraPRO';
+  src: url('/fonts/323ED8_0_0.woff2') format('woff2'); /* 假设这是粗体字体文件 */
+  font-weight: bold; /* 粗体，一般为 700 */
+  font-style: normal;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: CeraPRO,sans-serif;
+}
+* {
+  scroll-behavior: smooth;
+}
+
+[role=button], button {
+  cursor: pointer;
+}
+
+.font-custom {
+  font-family: CeraPRO,sans-serif;
+}
+.text-midnight {
+  color: hsl(var(--brand-midnight) / 1);
+}
+.bg-midnight{
+  background-color: hsl(var(--brand-midnight) / 1);
+}
+
+@font-face {
+  font-family: 'ff-tisa-web-pro';
+  src: url('/fonts/tisa-pro-400-italic.woff2') format('woff2');
+  /* src: url('/fonts/tisa-pro-400.woff2') format('woff2'); */
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'ff-tisa-web-pro';
+  src: url('/fonts/tisa-pro-700.woff2') format('woff2');
+  /* src: url('/fonts/tisa-pro-400.woff2') format('woff2'); */
+  font-weight: bold;
+  font-style: normal;
+}
+
+.font-tisa-pro {
+  font-family: var(--font-tisa-pro);
+}
+.font-cera-pro {
+  font-family: CeraPro;
+}
+.animate-expand-height
+ {
+  animation: .7s linear expand-height;
+}
+.bg-facebook {
+  --tw-bg-opacity: 1;
+  background-color: #3a579d;
+  background-color: rgba(58, 87, 157, var(--tw-bg-opacity));
+}
+@keyframes expand-height {
+  0% {
+    opacity: .75;
+    max-height: 0;
+  }
+  100% {
+    opacity: 1;
+    max-height: 100rem;
+  }
+}
